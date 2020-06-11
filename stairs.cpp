@@ -1,5 +1,10 @@
 int Solution::climbStairs(int A) {
-    return round(pow((1 + sqrt(5)) / 2, A+1) / sqrt(5));;
+    int ways[A+1];
+    ways[0]=1;
+    ways[1]=1;
+    for(int i=2;i<=A;i++){
+       ways[i] = ways[i-1] + ways[i-2];
+   }
+   return ways[A];
+   
 }
-
-
